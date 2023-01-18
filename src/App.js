@@ -32,7 +32,7 @@ class App extends Component {
       category: data.objects,
     });
     document.addEventListener('scroll', () => {
-      if (window.pageYOffset > 50) {
+      if (window.pageYOffset > 20) {
         this.setState({
           hg: true,
         });
