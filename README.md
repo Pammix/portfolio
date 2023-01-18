@@ -2,7 +2,9 @@
 
 ![Full](https://github.com/3ndrius/portfolio/blob/master/public/4.jpg?raw=true)
 
-Portfolio was created with React, the backend data is stored, management, and recieved from Cosmic JS.
+Portfolio App is created with React, the backend data is stored, management, and recieved from Cosmic JS.
+
+## Tech Stack: 
 
 - ReactJS
 - Styled-Components
