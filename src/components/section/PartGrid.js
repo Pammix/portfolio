@@ -31,8 +31,8 @@ export default class PartGrid extends Component {
     picture: [],
   };
   componentDidMount = async () => {
+    window.scrollTo(0, 100);
     const slug = this.props.match.params.slug;
-
     const Cosmic = require('cosmicjs');
     const api = Cosmic();
     const bucket = api.bucket({
