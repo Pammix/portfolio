@@ -85,7 +85,7 @@ const ListMenu = styled(pOverlay2)`
     list-style-type:none;
     margin: 4%;
     li{
-        font-size:2em;
+        font-size:3em;
         font-weight:${({theme}) => theme.fontWg.fat};
         transition: all 1s ease;
     :hover{
