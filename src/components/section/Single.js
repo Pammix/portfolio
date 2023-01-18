@@ -14,8 +14,8 @@ export default class Single extends Component {
     img: null,
   };
   componentDidMount = async () => {
+    window.scrollTo(0, 100);
     const link = this.props.match.params.slug;
-
     const Cosmic = require('cosmicjs');
     const api = Cosmic();
     const bucket = api.bucket({
