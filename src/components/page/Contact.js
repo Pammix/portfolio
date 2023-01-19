@@ -54,14 +54,6 @@ export default class Contact extends Component {
           <span>
             Created by: <a href='https://github.com/3ndrius'> 3ndrius </a>
           </span>
-          <hr />
-          {this.state.content && (
-            <Img
-              responsive
-              src={this.state.content.metadata.picture.url}
-              alt='img'
-            />
-          )}
         </Center>
       </PageWrap>
     );
