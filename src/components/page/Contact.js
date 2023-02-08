@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Center from '../parts/Center';
 import H1 from '../headers/H1';
 import Par from './../parts/Paragraph';
-import Img from './../parts/Figure';
 
 const PageWrap = styled.div`
   ${({ theme }) => theme.media.mobile} {
