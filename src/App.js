@@ -12,6 +12,7 @@ import Contact from './components/page/Contact';
 import Single from './components/section/Single';
 import Footer from './components/section/Footer';
 import Center from './components/parts/Center';
+import { createBucketClient } from '@cosmicjs/sdk';
 
 class App extends Component {
   state = {
@@ -19,15 +20,13 @@ class App extends Component {
     hg: false,
   };
   componentDidMount = async () => {
-    const Cosmic = require('cosmicjs');
-    const api = Cosmic();
-    const bucket = api.bucket({
-      slug: 'pamela-portfolio-photo' || 'imageapp',
-      read_key: '5rKxqMPGLYpdCUteF6GYcfoNhKi8RXhx6RjhcO98eDyxWvYxMU' || '',
+    const cosmic = createBucketClient({
+      bucketSlug: 'pamela-portfolio-photo',
+      readKey: '5rKxqMPGLYpdCUteF6GYcfoNhKi8RXhx6RjhcO98eDyxWvYxMU',
     });
-    const data = await bucket.getObjects({
+    const data =await cosmic.objects.find({
       type: 'categories',
-    });
+    })
     this.setState({
       category: data.objects,
     });

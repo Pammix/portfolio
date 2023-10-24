@@ -23,8 +23,8 @@ export default class Contact extends Component {
     const Cosmic = require('cosmicjs');
     const api = Cosmic();
     const bucket = api.bucket({
-      slug: 'react-portfolio-website-testing' || 'imageapp',
-      read_key: 'x2RiG85NGoq5icUfaRBNuwCfp9i8o83aloHphMClRwCfvLtSLC' || '',
+      slug: 'pamela-portfolio-photo' || 'imageapp',
+      read_key: '5rKxqMPGLYpdCUteF6GYcfoNhKi8RXhx6RjhcO98eDyxWvYxMU' || '',
     });
     const data = await bucket.getObject({
       slug: 'contact',

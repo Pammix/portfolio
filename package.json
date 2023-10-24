@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cosmicjs/sdk": "^1.0.10",
     "cosmicjs": "^3.4.4",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
