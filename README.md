@@ -1,5 +1,7 @@
 # Photographer Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/07da3f2a-5936-4207-ad89-87cc98db4691/deploy-status)](https://app.netlify.com/sites/pamela-fracassa-portfolio/deploys)
+
 ![Full](https://github.com/3ndrius/portfolio/blob/master/public/4.jpg?raw=true)
 
 Portfolio App is created with React, the backend data is stored, management, and recieved from Cosmic JS.
@@ -12,8 +14,6 @@ Portfolio App is created with React, the backend data is stored, management, and
 - AdobeXD
 - (RWD - mobile, tablet, desktop) / css-grid, media 
 - CMS from [Cosmic JS](https://cosmicjs.com/)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/07da3f2a-5936-4207-ad89-87cc98db4691/deploy-status)](https://app.netlify.com/sites/pamela-fracassa-portfolio/deploys)
 
 <hr/>
 
@@ -143,6 +143,3 @@ npm run build
 <hr/>
 
 ### This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-
-
