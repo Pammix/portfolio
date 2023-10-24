@@ -13,6 +13,8 @@ Portfolio App is created with React, the backend data is stored, management, and
 - (RWD - mobile, tablet, desktop) / css-grid, media 
 - CMS from [Cosmic JS](https://cosmicjs.com/)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/07da3f2a-5936-4207-ad89-87cc98db4691/deploy-status)](https://app.netlify.com/sites/pamela-fracassa-portfolio/deploys)
+
 <hr/>
 
 ### Getting Started / Download
