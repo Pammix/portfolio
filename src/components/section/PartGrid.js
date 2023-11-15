@@ -4,6 +4,9 @@ import Card from '../parts/Card';
 import Img from '../parts/Figure';
 import Anchor from './../parts/Anchor';
 import { Link } from 'react-router-dom';
+
+import { createBucketClient } from '@cosmicjs/sdk';
+
 const GridContainer = styled.div`
   min-height: 100%;
   display: grid;
@@ -28,29 +31,41 @@ const GridContainer = styled.div`
 `;
 export default class PartGrid extends Component {
   state = {
-    picture: [],
-  };
+    picture: [], 
+    images:[] };
+
   componentDidMount = async () => {
-    window.scrollTo(0, 100);
-    const slug = this.props.match.params.slug;
-    const Cosmic = require('cosmicjs');
-    const api = Cosmic();
-    const bucket = api.bucket({
-      slug: 'react-portfolio-website-testing' || 'imageapp',
-      read_key: 'x2RiG85NGoq5icUfaRBNuwCfp9i8o83aloHphMClRwCfvLtSLC' || '',
-    });
-    const data = await bucket.getObject({
-      slug: `${slug}`,
-    });
-    this.setState({
-      picture: data.object,
-    });
-  };
+    let temp= [];
+    const callApiSlug = async () => { window.scrollTo(0, 100);
+      const slug = this.props.match.params.slug;
+      const cosmic = createBucketClient({
+        bucketSlug: 'pamela-portfolio-photo',
+        readKey: '5rKxqMPGLYpdCUteF6GYcfoNhKi8RXhx6RjhcO98eDyxWvYxMU',
+      });
+      const data = await cosmic.objects.find({
+        slug: `${slug}`,
+      });
+      this.setState({
+        pictures: data.objects[0].metadata.images,
+      });
+
+      for (const element of this.state.pictures) {
+        const img = await cosmic.objects.findOne({  id: element });
+        temp.push(img.object);
+      }
+      console.log(temp);
+      this.setState({
+        images: temp
+      });
+  }
+  callApiSlug();
+  }
+ 
   render() {
     return (
       <GridContainer column={true}>
-        {this.state.picture.metadata &&
-          this.state.picture.metadata.images.map((item, index) => {
+         {this.state.images &&
+          this.state.images.map((item, index) => {
             return (
               <Card key={index} as={Link} to={'/img/' + item.slug}>
                 <Img src={item.metadata.img.url} alt='grid-img' />
