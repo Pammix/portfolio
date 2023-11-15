@@ -8,26 +8,28 @@ import ContainerCategory from './../parts/Contain';
 import Position from './../parts/PositionContainer';
 import { Link } from 'react-router-dom';
 import Par from './../parts/Paragraph';
+import { createBucketClient } from '@cosmicjs/sdk';
 
 export default class Single extends Component {
   state = {
-    img: null,
+    img: null
   };
+    
   componentDidMount = async () => {
     window.scrollTo(0, 100);
     const link = this.props.match.params.slug;
-    const Cosmic = require('cosmicjs');
-    const api = Cosmic();
-    const bucket = api.bucket({
-      slug: 'react-portfolio-website-testing' || 'imageapp',
-      read_key: 'x2RiG85NGoq5icUfaRBNuwCfp9i8o83aloHphMClRwCfvLtSLC' || '',
+    const cosmic = createBucketClient({
+      bucketSlug: 'pamela-portfolio-photo',
+      readKey: '5rKxqMPGLYpdCUteF6GYcfoNhKi8RXhx6RjhcO98eDyxWvYxMU',
     });
-    const data = await bucket.getObject({
+    const data = await cosmic.objects.find({
       slug: `${link}`,
     });
     this.setState({
-      img: data.object,
+      img: data.objects[0]
     });
+
+  console.log(this.state.img)
   };
 
   render() {
@@ -52,6 +54,7 @@ export default class Single extends Component {
         <Link to={'/'}>
           <Button>Go back</Button>
         </Link>
+      
       </ContainerCategory>
     );
   }
