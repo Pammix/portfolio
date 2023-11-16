@@ -28,9 +28,7 @@ export default class Single extends Component {
     this.setState({
       img: data.objects[0]
     });
-
-  console.log(this.state.img)
-  };
+    };
 
   render() {
     return (
@@ -51,7 +49,7 @@ export default class Single extends Component {
           </CaptionWrap>
         </CategoryCard>
         <br /> <br />
-        <Link to={'/'}>
+        <Link to={'/' + localStorage.getItem("slug")}>
           <Button>Go back</Button>
         </Link>
       

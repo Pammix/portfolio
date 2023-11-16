@@ -4,6 +4,7 @@ import Card from '../parts/Card';
 import Img from '../parts/Figure';
 import Anchor from './../parts/Anchor';
 import { Link } from 'react-router-dom';
+import Button from './../buttons/Button';
 
 import { createBucketClient } from '@cosmicjs/sdk';
 
@@ -26,7 +27,7 @@ const GridContainer = styled.div`
   ${({ theme }) => theme.media.desktop} {
     grid-template-columns: 320px 320px 320px 320px;
     width: 1280px;
-    margin: 200px auto 450px auto;
+    margin: 200px auto 100px auto;
   }
 `;
 export default class PartGrid extends Component {
@@ -63,11 +64,12 @@ export default class PartGrid extends Component {
  
   render() {
     return (
+      <> 
       <GridContainer column={true}>
          {this.state.images &&
           this.state.images.map((item, index) => {
             return (
-              <Card key={index} as={Link} to={'/img/' + item.slug}>
+              <Card key={index} as={Link} to={'/img/' + item.slug} onClick={() => localStorage.setItem("slug", this.props.match.params.slug)}>
                 <Img src={item.metadata.img.url} alt='grid-img' />
                 <Anchor as={Link} to={'/img/' + item.slug}>
                   <i className='fa fa-link' aria-hidden='true' />
@@ -76,6 +78,10 @@ export default class PartGrid extends Component {
             );
           })}
       </GridContainer>
+      <Link to={'/'} style={{marginLeft: "14rem"}}>
+          <Button>Go back</Button>
+      </Link>
+      </>
     );
   }
 }
