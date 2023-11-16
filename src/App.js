@@ -69,9 +69,8 @@ class App extends Component {
           </BrowserRouter>
           <Center fs>
             {' '}
-            " A portfolio is a set of pictures by someone, or photographs of
-            examples of their work, which they use when entering competitions or
-            applying for work. "
+            “Photography is a way of feeling, of touching, of loving.”
+            – Aaron Siskind
           </Center>
           <Footer />
         </Layout>
