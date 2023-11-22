@@ -78,7 +78,7 @@ export default class PartGrid extends Component {
             );
           })}
       </GridContainer>
-      <Link to={'/'} style={{marginLeft: "14rem"}}>
+      <Link to={'/'} style={{marginLeft: "13%"}}>
           <Button>Go back</Button>
       </Link>
       </>
